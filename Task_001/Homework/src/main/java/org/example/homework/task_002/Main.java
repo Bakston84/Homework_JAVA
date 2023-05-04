@@ -9,6 +9,9 @@ public class Main {
             String str = scanner.nextLine();
             System.out.println("Сумма положительных чисел перед отрицательным, равна > " + SumNumbers(str));
         }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
