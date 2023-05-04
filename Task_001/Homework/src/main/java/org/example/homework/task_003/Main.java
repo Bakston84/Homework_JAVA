@@ -10,7 +10,7 @@ public class Main {
             System.out.print("Введите последовательность N целых чисел > ");
             int number = scanner.nextInt();
             for (int i = 2; ; i++) {
-                if (SumNumbers(i)) {
+                if (FormationSequenceIntegers(i)) {
                     count++;
                     sum += i;
                 if (count == number) break;
@@ -23,10 +23,10 @@ public class Main {
         }
     }
 
-    private static boolean SumNumbers(int i) {
+    private static boolean FormationSequenceIntegers(int i) {
         if (i == 1) return false;
         for (int j = 2; j <= Math.sqrt(i); j++)
             if(i % j == 0) return false;
         return true;
-        }
     }
+}
