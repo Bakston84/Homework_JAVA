@@ -1,53 +1,36 @@
 package org.example.homework.task_004;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            StringBuilder str = new StringBuilder();
-            int count = 0;
-            System.out.print("Введите последовательность N целых чисел > ");
-            int number = scanner.nextInt();
-            for (int i = 2; ; i++) {
-                if (FormationSequenceIntegers(i)) {
-                    count++;
-                    str.append(i).append(" ");
-                if (count == number) { 
-                    AscendingCheck(str);
+            int temp = 0;
+            System.out.print("Введите размер последовательности N целых чисел > ");
+            int num = scanner.nextInt();
+            for (int index = 0; index < num; index++) { 
+                int number = generateRandomInt(num);
+                if (number <= temp) {
+                    System.out.println("Последовательность целых чисел не является возрастающей");
                     break;
-                }
-            }  
+                    }
+                temp = number; 
+            }
         }
-    }
         catch(Exception e) {
             e.printStackTrace();
         }
     }
+
     /**
      * 
-     * @param str список целых чисел
+     * @param num задаём диапазон случайного числа
+     * @return возвращаем случайное число
      */
 
-    private static void AscendingCheck(StringBuilder str) {
-        String[] arr = str.toString().split(" ");
-        for (int i = 1; i < arr.length; i++) {
-            if (Integer.parseInt(arr[i]) <= Integer.parseInt(arr[i - 1])) {
-                System.out.print("Последовательность целых чисел не является возрастающей");
-            }
-        }
-        System.out.print("Последовательность целых чисел является возрастающей");
-    }
-    /**
-     * 
-     * @param i задаём последовательность целых чисел
-     * @return возвращаем целое число
-     */
-
-    private static boolean FormationSequenceIntegers(int i) {
-        if (i == 1) return false;
-        for (int j = 2; j <= Math.sqrt(i); j++)
-            if(i % j == 0) return false;
-        return true;
+    private static int generateRandomInt(int num) {
+        Random random = new Random();
+        return random.nextInt(num);
     }
 }
