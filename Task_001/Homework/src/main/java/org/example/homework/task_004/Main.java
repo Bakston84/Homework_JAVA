@@ -24,6 +24,10 @@ public class Main {
             e.printStackTrace();
         }
     }
+    /**
+     * 
+     * @param str список целых чисел
+     */
 
     private static void AscendingCheck(StringBuilder str) {
         String[] arr = str.toString().split(" ");
@@ -34,6 +38,11 @@ public class Main {
         }
         System.out.print("Последовательность целых чисел является возрастающей");
     }
+    /**
+     * 
+     * @param i задаём последовательность целых чисел
+     * @return возвращаем целое число
+     */
 
     private static boolean FormationSequenceIntegers(int i) {
         if (i == 1) return false;

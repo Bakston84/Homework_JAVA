@@ -22,6 +22,11 @@ public class Main {
             e.printStackTrace();
         }
     }
+    /**
+     * 
+     * @param i задаём последовательность целых чисел
+     * @return возвращаем целое число
+     */
 
     private static boolean FormationSequenceIntegers(int i) {
         if (i == 1) return false;
