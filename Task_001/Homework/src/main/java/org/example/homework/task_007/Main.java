@@ -11,9 +11,6 @@ public class Main {
             String s = scanner.nextLine();
             System.out.println("Порядок символов > " + isValid(s)); 
         }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public static boolean isValid(String s) {
